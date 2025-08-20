@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design Tokens (Light) */
+:root {
+	--color-bg: #f5f7fa;
+	--color-surface: #ffffff;
+	--color-surface-alt: #eef2f6;
+	--color-text: #1b2430;
+	--color-accent: #5a3bff;
+	--color-accent-alt: #ff9f43;
+	--grad-hero: radial-gradient(circle at 30% 30%, #ffffff, #eef2f6);
+}
+/* Dark Theme */
+.dark {
+	--color-bg: #0d1117;
+	--color-surface: #161b22;
+	--color-surface-alt: #1f2630;
+	--color-text: #e6edf3;
+	--color-accent: #7b5dff;
+	--color-accent-alt: #ffa94d;
+	--grad-hero: radial-gradient(circle at 30% 30%, #1f2630, #0d1117);
+}
+
+html, body, :root { height: 100%; scroll-behavior: smooth; }
+body { background: var(--color-bg); color: var(--color-text); -webkit-font-smoothing: antialiased; font-family: ui-sans-serif, system-ui, sans-serif; }
+
+section { scroll-margin-top: 80px; }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-surface-alt); }
+::-webkit-scrollbar-thumb { background: var(--color-accent); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-accent-alt); }
+
+.fade-in { animation: fadeIn 0.6s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.glass { background: color-mix(in srgb, var(--color-surface) 80%, transparent); backdrop-filter: blur(12px); border:1px solid color-mix(in srgb, var(--color-surface-alt) 60%, transparent); box-shadow:0 4px 16px -4px rgba(0,0,0,.15); }
+.dark .glass { background: color-mix(in srgb, var(--color-surface) 70%, transparent); border:1px solid color-mix(in srgb, var(--color-surface-alt) 30%, transparent); }
+.btn { display:inline-flex; align-items:center; justify-content:center; border-radius:0.5rem; padding:0.625rem 1.25rem; font-weight:500; transition:background .25s,color .25s, border-color .25s; }
+.btn-accent { display:inline-flex; align-items:center; justify-content:center; border-radius:0.5rem; padding:0.625rem 1.25rem; font-weight:500; transition:background .25s,color .25s,border-color .25s; background: var(--color-accent); color:#fff; box-shadow:0 4px 16px -4px rgba(0,0,0,.2); }
+.btn-accent:hover { background: color-mix(in srgb, var(--color-accent) 90%, black); }
+.badge { display:inline-block; font-size:0.65rem; letter-spacing:.05em; text-transform:uppercase; font-weight:600; border-radius:9999px; padding:0.25rem 0.5rem; background: color-mix(in srgb, var(--color-accent) 10%, transparent); color:var(--color-accent); }
