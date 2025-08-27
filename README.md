@@ -2,6 +2,8 @@
 
 A modern portfolio website built with Next.js 15 App Router and Tailwind CSS v2.2.19 showcasing custom furniture and CNC design projects.
 
+
+
 ## Features
 - App Router structure (`app/`)
 - Tailwind v2 custom theme colors
